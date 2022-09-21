@@ -1,7 +1,7 @@
 import numbers
 import pytest 
 
-from average_calculator.calc import rounded_average
+from average_calculator.calc import calculator, rounded_average
 
 
 def test_average_of_two_numbers_is_properly_computed():
@@ -12,8 +12,9 @@ def test_average_of_two_numbers_is_properly_computed():
 
 
 def test_average_of_empty_list_raises_ValueError():
-    numbers = rounded_average([])
+    with pytest.raises(ValueError):
+
+        rounded_average([])
 
 
-    pytest.raises(ValueError)
 
