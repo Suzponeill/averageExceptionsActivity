@@ -30,6 +30,10 @@ def print_average(numbers):
     print(f"The rounded-down average of the numbers you entered is {average_value}")
 
 
-def rounded_average(numbers):
+def rounded_average(numbers): 
+    if numbers == []:
+        raise ValueError("cannot compute average of an empty collection")
     avg = sum(numbers) / len(numbers)
     return floor(avg)
+
+calculator()
