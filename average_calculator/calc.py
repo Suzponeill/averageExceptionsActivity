@@ -11,10 +11,16 @@ def calculator():
     while not finished:
         user_input = input("Enter an integer or 'compute': ")
         
+
         if user_input == "compute":
-            print_average(numbers)
-            finished = True
-           
+            try:
+                print_average(numbers)
+            except ValueError:
+                print("You must enter at least one number before calculating an average")
+                continue
+
+            finished = True 
+
         else:
             try:
                 number = int(user_input)
@@ -22,8 +28,8 @@ def calculator():
                 print("Invalid input. Input must be an integer or 'compute'")
                 continue
 
-            numbers.append(number)
 
+            numbers.append(number)
 
 def print_average(numbers):
     average_value = rounded_average(numbers)
